@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ko } from 'date-fns/locale';
-import { format, setHours, setMinutes } from 'date-fns';
 
 interface BirthDateTimeFormProps {
   onDateChange: (dateStr: string) => void;
@@ -22,7 +21,6 @@ export default function BirthDateTimeForm({
   const currentYear = new Date().getFullYear();
   
   // 날짜 관련 상태
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [year, setYear] = useState(currentYear - 30);
   const [month, setMonth] = useState(1);
   const [day, setDay] = useState(1);
